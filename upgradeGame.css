@@ -1,0 +1,66 @@
+body {
+	background-image: url(http://i.imgur.com/NUJeGwX.jpg);
+	background-color: #CCCCCC;
+	background-size: cover;
+}
+h1 {
+	color: #FFFFFF;
+}
+#userSub{
+	border: 5px ridge black;
+	border-radius: 10px;
+	border-color: #ffffaa;
+	display: inline-block;
+	padding: 5px;
+	margin: 10px;
+
+}
+
+header {
+	text-align: center;
+	margin-bottom: 25px;
+	background-color: #FF3333;
+	padding: 10px;
+	border: 10px inset #3333FF;
+	float: top;
+
+}
+
+fieldset {
+	text-align: center;
+	background-color: #FF3333;
+	border: 5px outset #3333FF;
+}
+
+#userList{
+	background-color: #000000;
+}
+
+#correctListHead{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+#CorrectList{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-align: center;
+}
+
+#wrongListHead{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+#WrongList{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+li {
+	text-transform: capitalize;
+}
