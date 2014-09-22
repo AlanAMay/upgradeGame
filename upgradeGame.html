@@ -10,14 +10,15 @@
 		<header>
 			<h1>Welcome to the SuperSmashBros. Guessing Game</h1>
 		</header>
-			<fieldset>
-				<legend></legend>
-			<h3>What SuperSmashBros Game do you want to play?</h3>
-				<select name="games" id="userGame">
-					<option value="smash64" id="sb64">SmashBros 64</option>
-					<option value="smashMelee" id="sbMelee">SmashBros Melee</option>
-					<option value="smashBrawl" id="sbBrawl">SmashBros Brawl</option>
-				</select>
+
+		<fieldset>
+			<legend></legend>
+				<h3>What SuperSmashBros Game do you want to play?</h3>
+					<select name="games" id="userGame">
+						<option value="smash64" id="sb64">SmashBros 64</option>
+						<option value="smashMelee" id="sbMelee">SmashBros Melee</option>
+						<option value="smashBrawl" id="sbBrawl">SmashBros Brawl</option>
+					</select>
 		
 				<p>Smash Character:
 					<input type="text" id="userAnswer" name="character"/>
@@ -27,7 +28,10 @@
 					<ul id="CorrectList"></ul>
 				<h2 id"wrongListHead">Wrong Awnsers:</h2>
 					<ul id="WrongList"></ul>
-			</fieldset>
+		</fieldset>
+
+		<h4 id="youWin">You Win!<h4>
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="upgradeGame.js"></script>
 	</body>

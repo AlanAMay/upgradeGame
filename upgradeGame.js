@@ -26,7 +26,8 @@ brawlNames =["FOX", "FALCO", "SHEIK", "MARTH", "JIGGLYPUFF", "PEACH", "CAPTAIN F
 var $game = $('#userGame');
 var $answer = $('#userAnswer');
 var $correctList = $('#CorrectList');
-var $wrongList= $('#WrongList');
+var $wrongList = $('#WrongList');
+var $win = $('#youWin');
 
 function CheckAnswer(guess, answerArray){
 	if(rightGuesses.indexOf(guess) > -1 || wrongGuesses.indexOf(guess) > -1){
@@ -36,33 +37,42 @@ function CheckAnswer(guess, answerArray){
 		rightGuesses.push(guess);
 		$correctList.append("<li>" + guess + "</li>");
 	}
-	else {
+	else{
 		wrongGuesses.push(guess);
 		$wrongList.append("<li>" + guess + "</li>");
 	}
 }
-function EraseList(currentGame){
-	if($game.val() !== currentGame){
-		$correctList.empty();
-		$wrongList.empty();
+
+function WinGame(rGuesses, aArray){
+	if(rGuesses.length == aArray){
+		$win.show;
 	}
 }
 
 $(function(){
+	$win.hide;
+	$('#userGame').on('change', function(){
+		$correctList.empty();
+		$wrongList.empty();
+		rightGuesses = [];
+		wrongGuesses = [];
+	});
 	$('#userSub').on('click', function(){
-	switch($game.val()){
-		case 'smash64':
-			CheckAnswer($answer.val(), names64);
-			break;
-		case 'smashMelee':
-			CheckAnswer($answer.val(), meleeNames);
-			break;
-		case 'smashBrawl':
-			CheckAnswer($answer.val(), brawlNames);
-			break;
-		default:
-			break;
-	}
-
+		switch($game.val()){
+			case 'smash64':
+				CheckAnswer($answer.val(), names64);
+				WinGame(rightGuesses, names64);
+				break;
+			case 'smashMelee':
+				CheckAnswer($answer.val(), meleeNames);
+				WinGame(rightGuesses, meleeNames);
+				break;
+			case 'smashBrawl':
+				CheckAnswer($answer.val(), brawlNames);
+				WinGame(rightGuesses, brawlNames);
+				break;
+			default:
+				break;
+		}
 	});
 });
