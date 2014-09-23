@@ -44,13 +44,12 @@ function CheckAnswer(guess, answerArray){
 }
 
 function WinGame(rGuesses, aArray){
-	if(rGuesses.length == aArray){
-		$win.show;
+	if(rGuesses.length == aArray.length){
+		$win.html("You Win!")
 	}
 }
 
 $(function(){
-	$win.hide;
 	$('#userGame').on('change', function(){
 		$correctList.empty();
 		$wrongList.empty();
